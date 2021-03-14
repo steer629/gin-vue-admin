@@ -1,11 +1,12 @@
 package v1
 
 import (
-	"gin-vue-admin/global"
-	"gin-vue-admin/model"
-	"gin-vue-admin/model/response"
-	"gin-vue-admin/service"
-	"gin-vue-admin/utils"
+	"server/global"
+	"server/model"
+	"server/model/response"
+	"server/service"
+	"server/utils"
+
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 )
@@ -69,7 +70,7 @@ func CheckFileMd5(c *gin.Context) {
 		response.OkWithDetailed(gin.H{
 			"chunks": chunks,
 			"isDone": isDone,
-		},"查询成功", c)
+		}, "查询成功", c)
 	}
 }
 

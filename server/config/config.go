@@ -9,7 +9,8 @@ type Server struct {
 	System  System  `mapstructure:"system" json:"system" yaml:"system"`
 	Captcha Captcha `mapstructure:"captcha" json:"captcha" yaml:"captcha"`
 	// gorm
-	Mysql      Mysql      `mapstructure:"mysql" json:"mysql" yaml:"mysql"`
+	Mysql    Mysql    `mapstructure:"mysql" json:"mysql" yaml:"mysql"`
+	Postgres Postgres `mpastructure:"postgres" json:"postgres" yaml:"postgres"`
 	// oss
 	Local Local `mapstructure:"local" json:"local" yaml:"local"`
 	Qiniu Qiniu `mapstructure:"qiniu" json:"qiniu" yaml:"qiniu"`

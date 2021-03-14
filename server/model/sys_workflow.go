@@ -1,9 +1,10 @@
 package model
 
 import (
-	"gin-vue-admin/global"
-	"gorm.io/gorm"
+	"server/global"
 	"time"
+
+	"gorm.io/gorm"
 )
 
 var WorkflowBusinessStruct map[string]func() GVA_Workflow

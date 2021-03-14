@@ -1,10 +1,11 @@
 package information
 
 import (
-	"gin-vue-admin/global"
-	"gin-vue-admin/model"
-	"github.com/gookit/color"
+	"server/global"
+	"server/model"
 	"time"
+
+	"github.com/gookit/color"
 
 	"gorm.io/gorm"
 )

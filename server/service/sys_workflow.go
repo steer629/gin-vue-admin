@@ -3,13 +3,15 @@ package service
 import (
 	"errors"
 	"fmt"
-	"gin-vue-admin/constant"
-	"gin-vue-admin/global"
-	"gin-vue-admin/model"
-	"gin-vue-admin/model/request"
+	"strconv"
+
+	"server/constant"
+	"server/global"
+	"server/model"
+	"server/model/request"
+
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
-	"strconv"
 )
 
 func getTable(businessType string) interface{} {

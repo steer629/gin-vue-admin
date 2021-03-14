@@ -1,11 +1,11 @@
 package utils
 
 import (
-	"gin-vue-admin/global"
 	zaprotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"go.uber.org/zap/zapcore"
 	"os"
 	"path"
+	"server/global"
 	"time"
 )
 

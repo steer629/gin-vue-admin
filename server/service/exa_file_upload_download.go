@@ -2,12 +2,13 @@ package service
 
 import (
 	"errors"
-	"gin-vue-admin/global"
-	"gin-vue-admin/model"
-	"gin-vue-admin/model/request"
-	"gin-vue-admin/utils/upload"
 	"mime/multipart"
 	"strings"
+
+	"server/global"
+	"server/model"
+	"server/model/request"
+	"server/utils/upload"
 )
 
 //@author: [piexlmax](https://github.com/piexlmax)

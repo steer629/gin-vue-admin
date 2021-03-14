@@ -1,9 +1,11 @@
 package utils
 
 import (
-	"gin-vue-admin/global"
-	"go.uber.org/zap"
 	"os"
+
+	"server/global"
+
+	"go.uber.org/zap"
 )
 
 //@author: [piexlmax](https://github.com/piexlmax)
@@ -26,7 +28,7 @@ func PathExists(path string) (bool, error) {
 //@author: [piexlmax](https://github.com/piexlmax)
 //@function: CreateDir
 //@description: 批量创建文件夹
-//@param: dirs ...string
+//@param: dirs server.string
 //@return: err error
 
 func CreateDir(dirs ...string) (err error) {
@@ -39,7 +41,7 @@ func CreateDir(dirs ...string) (err error) {
 			global.GVA_LOG.Debug("create directory" + v)
 			err = os.MkdirAll(v, os.ModePerm)
 			if err != nil {
-				global.GVA_LOG.Error("create directory"+ v, zap.Any(" error:", err))
+				global.GVA_LOG.Error("create directory"+v, zap.Any(" error:", err))
 			}
 		}
 	}

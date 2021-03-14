@@ -1,18 +1,19 @@
 package v1
 
 import (
-	"gin-vue-admin/global"
-	"gin-vue-admin/middleware"
-	"gin-vue-admin/model"
-	"gin-vue-admin/model/request"
-	"gin-vue-admin/model/response"
-	"gin-vue-admin/service"
-	"gin-vue-admin/utils"
+	"server/global"
+	"server/middleware"
+	"server/model"
+	"server/model/request"
+	"server/model/response"
+	"server/service"
+	"server/utils"
+	"time"
+
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"github.com/go-redis/redis"
 	"go.uber.org/zap"
-	"time"
 )
 
 // @Tags Base

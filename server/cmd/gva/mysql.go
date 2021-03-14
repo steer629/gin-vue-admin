@@ -2,17 +2,18 @@ package gva
 
 import (
 	"fmt"
-	information "gin-vue-admin/cmd/information/extra"
-	data "gin-vue-admin/cmd/information/system"
-	"gin-vue-admin/global"
-	"gin-vue-admin/model"
+	"os"
+	information "server/cmd/information/extra"
+	data "server/cmd/information/system"
+	"server/global"
+	"server/model"
+	"strings"
+
 	gormadapter "github.com/casbin/gorm-adapter/v3"
 	"github.com/gookit/color"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
-	"os"
-	"strings"
 )
 
 type DatabaseInfo struct {

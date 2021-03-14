@@ -2,14 +2,16 @@ package service
 
 import (
 	"errors"
-	"gin-vue-admin/global"
-	"gin-vue-admin/model"
-	"gin-vue-admin/model/request"
+	"strings"
+
+	"server/global"
+	"server/model"
+	"server/model/request"
+
 	"github.com/casbin/casbin/util"
 	"github.com/casbin/casbin/v2"
 	gormadapter "github.com/casbin/gorm-adapter/v3"
 	_ "github.com/go-sql-driver/mysql"
-	"strings"
 )
 
 //@author: [piexlmax](https://github.com/piexlmax)
@@ -58,7 +60,6 @@ func UpdateCasbinApi(oldPath string, newPath string, oldMethod string, newMethod
 //@param: authorityId string
 //@return: pathMaps []request.CasbinInfo
 
-
 func GetPolicyPathByAuthorityId(authorityId string) (pathMaps []request.CasbinInfo) {
 	e := Casbin()
 	list := e.GetFilteredPolicy(0, authorityId)
@@ -74,7 +75,7 @@ func GetPolicyPathByAuthorityId(authorityId string) (pathMaps []request.CasbinIn
 //@author: [piexlmax](https://github.com/piexlmax)
 //@function: ClearCasbin
 //@description: 清除匹配的权限
-//@param: v int, p ...string
+//@param: v int, p server.string
 //@return: bool
 
 func ClearCasbin(v int, p ...string) bool {
@@ -113,7 +114,7 @@ func ParamsMatch(fullNameKey1 string, key2 string) bool {
 //@author: [piexlmax](https://github.com/piexlmax)
 //@function: ParamsMatchFunc
 //@description: 自定义规则函数
-//@param: args ...interface{}
+//@param: args server.interface{}
 //@return: interface{}, error
 
 func ParamsMatchFunc(args ...interface{}) (interface{}, error) {

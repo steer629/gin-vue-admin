@@ -1,16 +1,18 @@
 package middleware
 
 import (
-	"gin-vue-admin/global"
-	"gin-vue-admin/model"
-	"gin-vue-admin/model/request"
-	"gin-vue-admin/service"
-	"gin-vue-admin/utils"
-	"github.com/gin-gonic/gin"
-	"go.uber.org/zap"
 	"io/ioutil"
 	"strconv"
 	"time"
+
+	"server/global"
+	"server/model"
+	"server/model/request"
+	"server/service"
+	"server/utils"
+
+	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
 )
 
 func ErrorToEmail() gin.HandlerFunc {

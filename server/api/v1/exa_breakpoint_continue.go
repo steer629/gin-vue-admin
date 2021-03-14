@@ -1,14 +1,17 @@
 package v1
 
 import (
-	"gin-vue-admin/global"
-	"gin-vue-admin/model/response"
-	"gin-vue-admin/service"
-	"gin-vue-admin/utils"
-	"github.com/gin-gonic/gin"
-	"go.uber.org/zap"
 	"io/ioutil"
 	"strconv"
+
+	"server/global"
+	"server/model/response"
+
+	"server/service"
+	"server/utils"
+
+	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
 )
 
 // @Tags ExaFileUploadAndDownload
@@ -82,7 +85,7 @@ func FindFile(c *gin.Context) {
 		global.GVA_LOG.Error("查找失败!", zap.Any("err", err))
 		response.FailWithMessage("查找失败", c)
 	} else {
-		response.OkWithDetailed(response.FileResponse{File: file},"查找成功", c)
+		response.OkWithDetailed(response.FileResponse{File: file}, "查找成功", c)
 	}
 }
 
@@ -122,7 +125,7 @@ func RemoveChunk(c *gin.Context) {
 	err = service.DeleteFileChunk(fileMd5, fileName, filePath)
 	if err != nil {
 		global.GVA_LOG.Error("缓存切片删除失败!", zap.Any("err", err))
-		response.FailWithDetailed(response.FilePathResponse{FilePath: filePath},"缓存切片删除失败", c)
+		response.FailWithDetailed(response.FilePathResponse{FilePath: filePath}, "缓存切片删除失败", c)
 	} else {
 		response.OkWithDetailed(response.FilePathResponse{FilePath: filePath}, "缓存切片删除成功", c)
 	}

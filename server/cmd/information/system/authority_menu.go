@@ -1,8 +1,9 @@
 package information
 
 import (
-	"gin-vue-admin/global"
-	"gin-vue-admin/model"
+	"server/global"
+	"server/model"
+
 	"github.com/gookit/color"
 )
 

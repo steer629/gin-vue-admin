@@ -2,12 +2,14 @@ package service
 
 import (
 	"errors"
-	"gin-vue-admin/global"
-	"gin-vue-admin/model"
-	"gin-vue-admin/model/request"
-	"gin-vue-admin/model/response"
-	"gorm.io/gorm"
 	"strconv"
+
+	"server/global"
+	"server/model"
+	"server/model/request"
+	"server/model/response"
+
+	"gorm.io/gorm"
 )
 
 //@author: [piexlmax](https://github.com/piexlmax)

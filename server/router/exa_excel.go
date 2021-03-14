@@ -1,7 +1,8 @@
 package router
 
 import (
-	"gin-vue-admin/api/v1"
+	v1 "server/api/v1"
+
 	"github.com/gin-gonic/gin"
 )
 

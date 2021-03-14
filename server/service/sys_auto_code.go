@@ -3,15 +3,16 @@ package service
 import (
 	"errors"
 	"fmt"
-	"gin-vue-admin/global"
-	"gin-vue-admin/model"
-	"gin-vue-admin/model/request"
-	"gin-vue-admin/utils"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
 	"text/template"
+
+	"server/global"
+	"server/model"
+	"server/model/request"
+	"server/utils"
 
 	"gorm.io/gorm"
 )
@@ -233,13 +234,13 @@ func addAutoMoveFile(data *tplData) {
 		}
 	} else if strings.Contains(fileSlice[1], "web") {
 		if strings.Contains(fileSlice[n-1], "js") {
-			data.autoMoveFilePath = filepath.Join("../", "web", "src", dir, base)
+			data.autoMoveFilePath = filepath.Join("server/", "web", "src", dir, base)
 		} else if strings.Contains(fileSlice[n-2], "workflowForm") {
-			data.autoMoveFilePath = filepath.Join("../", "web", "src", "view", filepath.Base(filepath.Dir(filepath.Dir(data.autoCodePath))), strings.TrimSuffix(base, filepath.Ext(base))+"WorkflowForm.vue")
+			data.autoMoveFilePath = filepath.Join("server/", "web", "src", "view", filepath.Base(filepath.Dir(filepath.Dir(data.autoCodePath))), strings.TrimSuffix(base, filepath.Ext(base))+"WorkflowForm.vue")
 		} else if strings.Contains(fileSlice[n-2], "form") {
-			data.autoMoveFilePath = filepath.Join("../", "web", "src", "view", filepath.Base(filepath.Dir(filepath.Dir(data.autoCodePath))), strings.TrimSuffix(base, filepath.Ext(base))+"Form.vue")
+			data.autoMoveFilePath = filepath.Join("server/", "web", "src", "view", filepath.Base(filepath.Dir(filepath.Dir(data.autoCodePath))), strings.TrimSuffix(base, filepath.Ext(base))+"Form.vue")
 		} else if strings.Contains(fileSlice[n-2], "table") {
-			data.autoMoveFilePath = filepath.Join("../", "web", "src", "view", filepath.Base(filepath.Dir(filepath.Dir(data.autoCodePath))), base)
+			data.autoMoveFilePath = filepath.Join("server/", "web", "src", "view", filepath.Base(filepath.Dir(filepath.Dir(data.autoCodePath))), base)
 		}
 	}
 }
